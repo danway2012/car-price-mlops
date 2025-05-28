@@ -78,7 +78,7 @@ wandb.log({
     "r2_score": r2,
     "rmse": rmse,
     "mae": mae
-})
+}, step=1)
 
 # 10. Guardar modelo
 os.makedirs("artifacts", exist_ok=True)

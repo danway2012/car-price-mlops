@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  car-price-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app  # Live reload para desarrollo
+    command: uvicorn src.inference_api:app --host 0.0.0.0 --port 8000 --reload

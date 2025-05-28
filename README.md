@@ -49,6 +49,9 @@ make serve
 ## ENLACES PRÁCTICA
 
 Repositorio GitHub	https://github.com/danway2012/car-price-mlops
+
 Proyecto en W&B	https://wandb.ai/daniel01hernando-universidad-politecnica-de-madrid/car-price-mlops
+
 Run W&B (experimento lineal)	https://wandb.ai/daniel01hernando-universidad-politecnica-de-madrid/car-price-mlops/runs/ntmaov2j
+
 API desplegada en Azure (AppSvc)	https://car-price-api-dch-gaerdxcvbxg5cpax.westeurope-01.azurewebsites.net

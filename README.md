@@ -16,34 +16,7 @@ Aplicar buenas prácticas de MLOps a un proyecto ya desarrollado, incorporando:
 
 ---
 
-## 🗂 Estructura del proyecto
-CAR-PRICE-MLOPS/
-├── .github/workflows/ # GitHub Actions CI/CD
-│ └── test.yml
-├── app/
-│ ├── artifacts/ # Modelo entrenado (model.pkl)
-│ ├── data/ # Dataset original (.csv)
-│ ├── notebook/ # Notebook de análisis previo
-│ ├── src/ # Código fuente: entrenamiento y API
-│ │ ├── inference_api.py
-│ │ └── train.py
-│ ├── test/ # Tests automáticos con pytest
-│ │ ├── test_invalid_input.py
-│ │ ├── test_predict_api.py
-│ │ └── test_train.py
-│ └── ui/ # Interfaz web HTML
-│ └── form.html
-├── .env # Clave privada para W&B (excluida)
-├── .gitignore
-├── requirements.txt
-├── Dockerfile
-├── Dockerfile.api
-├── docker-compose.yml
-├── Makefile
-└── README.md
 
-
----
 
 ## 💻 Instrucciones para entorno local
 

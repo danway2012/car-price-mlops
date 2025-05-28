@@ -13,4 +13,4 @@ train:
 # Servir la API con FastAPI + UI (equivalente a docker-compose up)
 serve:
 	@echo "Lanzando la API en http://localhost:8000 ..."
-	docker-compose up --build
+	docker compose up --build

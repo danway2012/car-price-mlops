@@ -1,7 +1,5 @@
 .PHONY: train build serve
 
-include .env
-export
 
 # Construir la imagen Docker (para training o serving)
 build:

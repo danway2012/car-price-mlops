@@ -1,0 +1,24 @@
+#  Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pkl
+
+#  Entornos virtuales
+.venv/
+env/
+venv/
+
+#  Archivos de Jupyter temporales
+.ipynb_checkpoints/
+
+#  Docker build cache (opcional)
+*.tar
+*.log
+
+#  Configs del sistema
+.DS_Store
+Thumbs.db
+
+#  Config VSCode (opcional si no es necesario compartirlo)
+.vscode/

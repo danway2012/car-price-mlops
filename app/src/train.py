@@ -27,7 +27,7 @@ features = ['curbweight', 'enginesize', 'boreratio', 'carwidth', 'horsepower',
             'CarBrand', 'fuelsystem', 'drivewheel', 'carbody', 'fueltype']
 target = 'price'
 
-# 4. Iniciar el experimento W&B (una vez ya existe `features`)
+# 4. Iniciar el experimento W&B 
 wandb.init(
     project="car-price-mlops",
     name="linear-regression-v1",

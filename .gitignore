@@ -8,6 +8,7 @@ __pycache__/
 .venv/
 env/
 venv/
+.env
 
 #  Archivos de Jupyter temporales
 .ipynb_checkpoints/

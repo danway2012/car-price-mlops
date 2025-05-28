@@ -72,6 +72,6 @@ make serve
 
 ---
 
-## Acceso a interfaz
+## Acceso a interfaz (make serve)
 
 http://localhost:8000

@@ -1,7 +1,7 @@
 import pandas as pd
 import joblib
 import os
-
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 from sklearn.compose import ColumnTransformer
@@ -68,7 +68,7 @@ pipeline.fit(X_train, y_train)
 # 8. Evaluar modelo
 y_pred = pipeline.predict(X_test)
 r2 = r2_score(y_test, y_pred)
-rmse = mean_squared_error(y_test, y_pred, squared=False)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 mae = mean_absolute_error(y_test, y_pred)
 
 print(f"✅ R2: {r2:.4f} | RMSE: {rmse:.2f} | MAE: {mae:.2f}")

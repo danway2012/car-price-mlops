@@ -31,6 +31,7 @@ target = 'price'
 # 4. Iniciar experimento W&B
 wandb.init(
     project="car-price-mlops",
+    entity="daniel01hernando",  
     name="linear-regression-v1",
     config={
         "model_type": "LinearRegression",
@@ -39,8 +40,7 @@ wandb.init(
         "scaler": "MinMaxScaler",
         "encoder": "OneHotEncoder"
     }
-)
-config = wandb.config
+)ig = wandb.config
 
 # 5. Preparar datos
 X = df[features]

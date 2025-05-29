@@ -9,7 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    env:
+      WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
@@ -25,10 +26,6 @@ jobs:
         pip install -r app/requirements.txt
         pip install pytest requests
     
-    - name: Configurar API key de Weights & Biases
-      run: |
-        echo "export WANDB_API_KEY=${{ secrets.WANDB_API_KEY }}" >> $GITHUB_ENV
-
     - name: Lanzar API en background
       run: |
         nohup uvicorn app.src.inference_api:app --port 8001 &

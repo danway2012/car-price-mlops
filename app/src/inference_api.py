@@ -9,7 +9,7 @@ import os
 app = FastAPI()
 
 # Cargar el modelo
-model_path = os.path.join(os.path.dirname(__file__), "../artifacts/model.pkl")
+model_path = os.path.join(os.getcwd(), "artifacts", "model.pkl")
 model = joblib.load(model_path)
 
 # Definir el modelo de entrada

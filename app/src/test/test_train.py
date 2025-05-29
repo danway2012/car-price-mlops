@@ -13,4 +13,4 @@ def test_model_training():
     subprocess.run(["python", "app/src/train.py"], check=True)
 
     # Verificar que se ha generado el modelo
-    assert os.path.exists(model_path), "El modelo no se generó correctamente"
+    assert os.path.exists(model_path), "El modelo no se generó correctamento"

@@ -11,7 +11,8 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import wandb
 
 # 1. Cargar el dataset
-df = pd.read_csv("data/CarPrice_Assignment.csv")
+data_path = os.path.join(os.path.dirname(__file__), "../data/CarPrice_Assignment.csv")
+df = pd.read_csv(data_path)
 df.drop(columns=['car_ID'], inplace=True)
 df.columns = df.columns.str.strip().str.replace(' ', '_')
 

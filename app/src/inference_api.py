@@ -32,8 +32,7 @@ def predict_price(input_data: CarInput):
     prediction = model.predict(input_df)[0]
     return {"predicted_price": round(prediction, 2)}
 
-# Servir archivos estáticos (HTML UI)
-app.mount("/ui", StaticFiles(directory="ui"), name="ui")
+app.mount("/ui", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "../ui")), name="ui")
 
 @app.get("/", response_class=HTMLResponse)
 def serve_ui():

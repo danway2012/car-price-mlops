@@ -62,6 +62,6 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: car-price-api-mlops-v2-akbbc6g4dhbxf3cu
+        app-name: car-price-api-mlops-v2
         slot-name: production
         package: ./app

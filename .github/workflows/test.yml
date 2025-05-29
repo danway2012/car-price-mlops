@@ -25,6 +25,11 @@ jobs:
         pip install -r app/requirements.txt
         pip install pytest requests
 
+    - name: Lanzar API en background
+      run: |
+        nohup uvicorn app.src.inference_api:app --port 8001 &
+        sleep 10
+
     - name: Ejecutar tests
       run: |
         pytest app/src/test/
@@ -46,6 +51,6 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: car-price-api-mlops-v2-akbbc6g4dhbxf3cu  
+        app-name: car-price-api-mlops-v2-akbbc6g4dhbxf3cu
         slot-name: production
-        package: ./app  
+        package: ./app

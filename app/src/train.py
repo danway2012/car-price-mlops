@@ -29,10 +29,13 @@ features = ['curbweight', 'enginesize', 'boreratio', 'carwidth', 'horsepower',
             'CarBrand', 'fuelsystem', 'drivewheel', 'carbody', 'fueltype']
 target = 'price'
 
-# 4. Iniciar experimento W&B
-wandb.init(
+# Solo activamos wandb si se indica explícitamente
+use_wandb = os.getenv("USE_WANDB", "true").lower() == "true"
+
+if use_wandb:
+    wandb.init(
     project="car-price-mlops",
-    entity="daniel01hernando",  #  tu usuario personal
+    entity="daniel01hernando",  
     name="linear-regression-v1",
     config={
         "model_type": "LinearRegression",
@@ -41,9 +44,18 @@ wandb.init(
         "scaler": "MinMaxScaler",
         "encoder": "OneHotEncoder"
     }
-)
+    )
+    config = wandb.config
+else:
+    class DummyConfig:
+        test_size = 0.2
+    config = DummyConfig()
 
-config = wandb.config
+
+# 4. Iniciar experimento W&B
+
+
+
 
 # 5. Preparar datos
 X = df[features]
@@ -74,16 +86,18 @@ r2 = r2_score(y_test, y_pred)
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 mae = mean_absolute_error(y_test, y_pred)
 
-print(f"✅ R2: {r2:.4f} | RMSE: {rmse:.2f} | MAE: {mae:.2f}")
+print(f" R2: {r2:.4f} | RMSE: {rmse:.2f} | MAE: {mae:.2f}")
 
 # 9. Log en W&B
-wandb.log({
-    "r2_score": r2,
-    "rmse": rmse,
-    "mae": mae
-}, step=1)
+if use_wandb:
+    
+    wandb.log({
+        "r2_score": r2,
+        "rmse": rmse,
+        "mae": mae
+    }, step=1)
 
 # 10. Guardar modelo
 os.makedirs("artifacts", exist_ok=True)
 joblib.dump(pipeline, "artifacts/model.pkl")
-print("✅ Modelo guardado en artifacts/model.pkl")
+print(" Modelo guardado en artifacts/model.pkl")

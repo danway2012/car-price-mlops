@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+      USE_WANDB: "false"
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3

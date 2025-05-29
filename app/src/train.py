@@ -98,6 +98,11 @@ if use_wandb:
     }, step=1)
 
 # 10. Guardar modelo
-os.makedirs("artifacts", exist_ok=True)
-joblib.dump(pipeline, "artifacts/model.pkl")
+# Guardar modelo
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # app/src/
+model_dir = os.path.abspath(os.path.join(BASE_DIR, "..", "artifacts"))
+os.makedirs(model_dir, exist_ok=True)
+
+model_path = os.path.join(model_dir, "model.pkl")
+joblib.dump(pipeline, model_path)
 print(" Modelo guardado en artifacts/model.pkl")

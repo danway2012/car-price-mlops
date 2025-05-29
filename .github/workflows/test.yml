@@ -12,6 +12,7 @@ jobs:
     env:
       WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
       USE_WANDB: "false"
+
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
@@ -26,7 +27,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r app/requirements.txt
         pip install pytest requests
-    
+
+    - name: Entrenar modelo
+      run: |
+        python app/src/train.py
+
+    - name: Verificar que se generó el modelo
+      run: |
+        ls -l app/artifacts/
+
     - name: Lanzar API en background
       run: |
         nohup uvicorn app.src.inference_api:app --port 8001 &

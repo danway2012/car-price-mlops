@@ -19,3 +19,10 @@ train:
 serve:
 	@echo "Lanzando la API en http://localhost:8000 ..."
 	docker compose up --build
+
+deploy:
+	@echo " Asegurando push a rama main..."
+	git add .
+	git commit -m " Despliegue automático a Azure desde Makefile" || echo "Nada que commitear"
+	git push origin main
+	@echo " Despliegue iniciado vía GitHub Actions"

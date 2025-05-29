@@ -10,7 +10,7 @@ def test_model_training():
     env = os.environ.copy()
     env["WANDB_API_KEY"] = os.getenv("WANDB_API_KEY", "")
     # Ejecutar entrenamiento
-    subprocess.run(["python", "app/src/train.py"], check=True)
+    subprocess.run(["python", "app/src/train.py"], check=True, env=env)
 
     # Verificar que se ha generado el modelo
     assert os.path.exists(model_path), "El modelo no se generó correctamento"

@@ -7,6 +7,8 @@ def test_model_training():
     if os.path.exists(model_path):
         os.remove(model_path)
 
+    env = os.environ.copy()
+    env["WANDB_API_KEY"] = os.getenv("WANDB_API_KEY", "")
     # Ejecutar entrenamiento
     subprocess.run(["python", "app/src/train.py"], check=True)
 

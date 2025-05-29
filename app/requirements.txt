@@ -1,8 +1,11 @@
 fastapi
-uvicorn[standard]
-gunicorn
+uvicorn
 pydantic
 joblib
 scikit-learn
 pandas
 numpy
+requests
+pytest
+wandb
+gunicorn

@@ -23,3 +23,5 @@ Thumbs.db
 
 #  Config VSCode (opcional si no es necesario compartirlo)
 .vscode/
+
+app/artifacts/model.pkl

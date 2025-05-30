@@ -54,3 +54,8 @@ Repositorio GitHub	https://github.com/danway2012/car-price-mlops
 Run W&B (experimento lineal)	https://wandb.ai/daniel01hernando-universidad-politecnica-de-madrid/car-price-mlops/runs/ntmaov2j (tengo un problema con la cuenta me lo está solucionando el servicio técnico)
 
 API desplegada en Azure (AppSvc)	https://car-price-hzgxesdjbye8htaw.spaincentral-01.azurewebsites.net/
+
+
+## AUTORES
+
+Daniel Cuellar Hernando y David Caballero Macías
